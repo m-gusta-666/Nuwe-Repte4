@@ -33,12 +33,12 @@ public class VerduraService {
 	
 	
 	public Verdura updateOne(Verdura verdura, int id) {
-		Verdura f = getOne(id);
+		Verdura v = getOne(id);
 		
-		f.setNom(verdura.getNom());
-		f.setQuantitatQuilos(verdura.getQuantitatQuilos());
+		v.setNom(verdura.getNom());
+		v.setQuantitatQuilos(verdura.getQuantitatQuilos());
 		
-		return verduraRepository.save(f);
+		return verduraRepository.save(v);
 	}
 	
 	
