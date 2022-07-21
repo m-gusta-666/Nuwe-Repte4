@@ -1,6 +1,9 @@
 package com.nuwe.repte4.gustamanteclavell.marti.Repte4GustamanteMarti.model.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "fruites")
@@ -11,9 +14,14 @@ public class Fruita {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
+	@NotNull
+	@NotBlank
 	@Column(name="nom")
 	private String nom;
 	
+	
+	@NotNull
+	@Min(1)
 	@Column(name="quantitatQuilos")
 	private int quantitatQuilos;
 
@@ -22,10 +30,6 @@ public class Fruita {
 		
 	}
 	
-	public Fruita(String nom, int quantitatQuilos) {
-		this.nom = nom;
-		this.quantitatQuilos = quantitatQuilos;
-	}
 
 	public Integer getId() {
 		return id;
