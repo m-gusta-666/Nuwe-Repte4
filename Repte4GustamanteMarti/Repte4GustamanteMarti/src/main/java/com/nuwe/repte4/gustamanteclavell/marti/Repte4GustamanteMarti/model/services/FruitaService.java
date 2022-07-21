@@ -43,6 +43,7 @@ public class FruitaService {
 	
 	
 	public void deleteOne(int id) {
+		getOne(id);
 		fruitaRepository.deleteById(id);
 	}
 	

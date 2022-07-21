@@ -43,6 +43,7 @@ public class VerduraService {
 	
 	
 	public void deleteOne(int id) {
+		getOne(id);
 		verduraRepository.deleteById(id);
 	}
 }
