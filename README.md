@@ -16,7 +16,7 @@ spring.datasource.password = 1234
 In the url field, you can change the connection url, which in this case is `localhost:3306`, and the database in which the tables will be created by Hibernate, which in this case is `test`. 
 Also, you must change both `username` and `password` to values that can be used with your connection and have sufficient permissions to perform CRUD operations in the database. 
 
-Once this is done, you should already be able to run the application and test it using [Postman](https://www.postman.com/).
+Once this is done, you should already be able to run the application and test it using [Postman](https://www.postman.com/) (see 'Postman tests' section at this README).
 ## Structure
 
 In this CRUD I have chosen to persist two simple entities, **Fruita** & **Verdura**, both of which have the same two fields (not including Id).
@@ -42,3 +42,8 @@ It contains custom exceptions as well as a ControllerAdvisor class to handle exc
 As you can see, I did not follow the structure recommended in the challenge description, because I am more comfortable with this one.
 Also, to handle the entity validation I did not need a middleware package with classes to validate the entities, as I have used annotations for the same purposes.  
 Those annotations can be seen in the domain layer (`@NotBlank`, `@NotNull`, `@Min` to make rules for each field in the entity) and in the controller layer (`@Valid` to show that the entity must follow the rules made).
+
+##  Postman tests
+
+I have uploaded a json file that contains a Postman collection with requests written for the purpose of testing if they work properly and if their responses are exactly what we should expect. To run these tests, you can import the file into Postman as a collection.  
+Please take in mind that all tests that need it use the path variable `id=1`, so if there is no entity with this id these tests might not always pass, as the response code will be `404` instead of the expected one.
